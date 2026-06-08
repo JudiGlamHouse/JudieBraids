@@ -355,12 +355,17 @@
   </section>
   <!-- LEAVE A REVIEW -->
 <section id="leave-review" class="section section-light">
-  <div class="container">
-    <h2>Leave a Review</h2>
-    <p class="section-intro">
-      Share your experience at JudiGlamHouse. Your feedback helps us grow.
-    </p>
+  <div class="container leave-review-full">
 
+    <!-- LEFT SIDE -->
+    <div class="leave-review-left">
+      <h2>Leave a Review</h2>
+      <p class="section-intro">
+        Share your experience at JudiGlamHouse. Your feedback helps us grow.
+      </p>
+    </div>
+
+    <!-- RIGHT SIDE -->
     <form action="https://formsubmit.co/judifaeljoseph05@gmail.com"
           method="POST"
           class="review-form">
@@ -370,22 +375,23 @@
       <input type="hidden" name="_template" value="table">
 
       <div class="form-group">
-        <label for="review-name">Your name</label>
-        <input type="text" id="review-name" name="name" required>
+        <label>Your name</label>
+        <input type="text" name="name" required>
       </div>
 
       <div class="form-group">
-        <label for="review-service">Service received</label>
-        <input type="text" id="review-service" name="service" required>
+        <label>Service received</label>
+        <input type="text" name="service" required>
       </div>
 
       <div class="form-group">
-        <label for="review-message">Your review</label>
-        <textarea id="review-message" name="review" rows="4" required></textarea>
+        <label>Your review</label>
+        <textarea name="review" required></textarea>
       </div>
 
       <button type="submit" class="btn btn-primary">Submit Review</button>
     </form>
+
   </div>
 </section>
 
