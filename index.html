@@ -14,7 +14,9 @@
   <header>
     <div class="container header-container">
       <div class="logo">
-        <span class="logo-mark">JG</span>
+        <span class="logo-mark">
+  <img src="images/logo.jpg" alt="Judi Glam House Logo">
+</span>
         <div class="logo-text">
           <span class="logo-name">Judi Glam House</span>
           <span class="logo-tagline">Expert Braids & Luxury Nail Design</span>
@@ -458,18 +460,17 @@
     <!-- LEFT : BOOKING FORM -->
     <div class="booking-left">
       <h2>Online Booking</h2>
-      <p>Choose your service and time. We will confirm by email.</p>
+      <p>Choose your service, then select your date & time.</p>
 
-     <form action="https://formsubmit.co/judifaeljoseph05@gmail.com"
-      method="POST"
-      enctype="multipart/form-data"
-      class="booking-form">
-
+      <!-- FORMULAIRE DES SERVICES -->
+      <form action="https://formsubmit.co/judifaeljoseph05@gmail.com"
+            method="POST"
+            enctype="multipart/form-data"
+            class="booking-form">
 
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_subject" value="New Booking – JudiGlamHouse">
         <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_calendar" value="true">
 
         <div class="form-row">
           <div class="form-group">
@@ -493,25 +494,28 @@
             <label for="booking-service">Service</label>
             <select id="booking-service" name="service" required>
               <option value="">Select a service</option>
+
               <optgroup label="Men – Braids & Locks">
                 <option value="men-braids">Men braids</option>
                 <option value="men-cornrows">Men cornrows</option>
                 <option value="men-locks">Men locks</option>
               </optgroup>
+
               <optgroup label="Men – Hands & Feet">
                 <option value="men-manicure">Men manicure</option>
                 <option value="men-pedicure">Men pedicure</option>
                 <option value="men-manicure-pedicure">Manicure + Pedicure</option>
               </optgroup>
+
               <optgroup label="Women – Braids & Locks">
                 <option value="women-braids">Women braids</option>
                 <option value="women-long-tresses">Long tresses</option>
                 <option value="women-short-tresses">Short tresses</option>
                 <option value="women-short-locks">Short locks</option>
-                <option value="women-long-locks">long locks</option>
-                <option value="women-long-locks">Medium locks</option>
-
+                <option value="women-long-locks">Long locks</option>
+                <option value="women-medium-locks">Medium locks</option>
               </optgroup>
+
               <optgroup label="Women – Nails">
                 <option value="women-simple-manicure">Simple manicure</option>
                 <option value="women-gel-french">Gel French</option>
@@ -520,33 +524,7 @@
                 <option value="women-acrylic">Acrylic</option>
                 <option value="women-pedicure">Pedicure</option>
               </optgroup>
-            </select>
-          </div>
-        </div>
 
-        <div class="form-row">
-          <div class="form-group">
-            <label for="booking-date">Date</label>
-            <input type="date" id="booking-date" name="date" required />
-          </div>
-
-          <div class="form-group">
-            <label for="booking-time">Time</label>
-            <select id="booking-time" name="time" required>
-              <option value="">Select a time</option>
-              <option value="17:00">08:00</option>
-              <option value="17:00">09:00</option>
-              <option value="10:00">10:00</option>
-              <option value="11:30">11:30</option>
-              <option value="17:00">12:00</option>
-              <option value="17:00">13:00</option>
-              <option value="14:00">14:00</option>
-              <option value="15:30">15:30</option>
-              <option value="17:00">16:00</option>
-              <option value="17:00">17:00</option>
-              <option value="17:00">18:00</option>
-              <option value="17:00">19:00</option>
-              <option value="17:00">20:00</option>
             </select>
           </div>
         </div>
@@ -556,13 +534,35 @@
           <textarea id="booking-notes" name="notes" rows="4" placeholder="Tell us your preferences or style details..."></textarea>
         </div>
 
-<div class="form-group">
-  <label for="booking-photo">Upload model (optional)</label>
-  <input type="file" id="booking-photo" name="attachment" accept="image/*">
-</div>
+        <div class="form-group">
+          <label for="booking-photo">Upload model (optional)</label>
+          <input type="file" id="booking-photo" name="attachment" accept="image/*">
+        </div>
 
         <button type="submit" class="btn btn-primary btn-full">Send booking request</button>
       </form>
+
+      <!-- CALENDLY EN DEHORS DU FORMULAIRE -->
+      <h3 style="margin-top: 2rem;">Choose date & time</h3>
+      <div style="max-width: 700px; margin: 0 auto;">
+        <iframe 
+         id="calendly-frame"
+  src="https://calendly.com/angeloguillaume593/rendez-vous-judi-glam-house?background_color=fff7fb&text_color=622950&primary_color=ff6fb3"
+  width="100%" 
+  height="500"
+  frameborder="0"
+  style="border-radius: 16px;">
+        </iframe>
+      </div>
+<script>
+  const serviceSelect = document.getElementById("booking-service");
+  const calendlyFrame = document.getElementById("calendly-frame");
+
+  serviceSelect.addEventListener("change", () => {
+    const selected = encodeURIComponent(serviceSelect.value);
+    calendlyFrame.src = `https://calendly.com/angeloguillaume593/rendez-vous-judi-glam-house?service=${selected}&background_color=fff7fb&text_color=622950&primary_color=ff6fb3`;
+  });
+</script>
     </div>
 
     <!-- RIGHT : CONTACT INFO -->
@@ -585,8 +585,6 @@
 
   </div>
 </section>
-
-</div>
 
           <!-- CONTACT -->
 <section id="contact" class="section">
