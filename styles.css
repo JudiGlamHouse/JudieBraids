@@ -959,3 +959,24 @@ header .btn-outline {
   font-size: 0.75rem !important;
   border-radius: 999px !important;
 }
+
+/* ============================
+   BANDEAU DE PHOTOS — SOLUTION FINALE
+   ============================ */
+
+.top-photo-strip {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 1rem 0;
+  width: 100%;
+}
+
+.top-photo-strip img {
+  height: 120px;
+  width: auto;
+  object-fit: cover;
+  border-radius: 14px;
+  flex-shrink: 0;
+}
