@@ -1003,20 +1003,3 @@ header .btn-outline {
   border-radius: 16px;
   overflow: hidden !important;   /* coupe le haut */
 }
-.logo-mark {
-  width: 45px;
-  height: 45px;
-  background-color: #ff6fb3; /* ton rose */
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden; /* coupe ce qui dépasse */
-}
-
-.logo-mark img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* ton logo remplit parfaitement le cercle */
-}
-
