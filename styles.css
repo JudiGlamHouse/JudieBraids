@@ -973,13 +973,22 @@ header .btn-outline {
   width: 100%;
 }
 
+/* ⭐ BANDEAU DE PHOTOS — VERSION AGRANDIE ⭐ */
 .top-photo-strip img {
-  height: 120px;
+  height: 400px;        /* AUGMENTE LA TAILLE */
   width: auto;
   object-fit: cover;
-  border-radius: 14px;
+  border-radius: 16px;
   flex-shrink: 0;
 }
+
+/* ⭐ VERSION MOBILE — PLUS PETIT MAIS PLUS GRAND QU’AVANT ⭐ */
+@media (max-width: 600px) {
+  .top-photo-strip img {
+    height: 150px;      /* avant 120px → maintenant 150px */
+  }
+}
+
 @media (max-width: 600px) {
   #calendly-frame {
     height: 420px !important;
