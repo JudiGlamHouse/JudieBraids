@@ -60,9 +60,11 @@
   </div>
 
   <div class="top-photo-strip">
+    <video src="videos/trend2.MP4" autoplay muted loop playsinline></video>
     <img src="images/Girl_nail.jpg" alt="">
+    <video src="videos/trend.MP4" autoplay muted loop playsinline></video>
+    <video src="videos/trend3.MP4" autoplay muted loop playsinline></video>
     <img src="images/Girl_nail3.jpg" alt="">
-    <img src="images/Men_braids1.jpg" alt="">
     <img src="images/women_braids1.jpg" alt="">
     <img src="images/women_braids.jpg" alt="">
   <img src="images/5460856342416848135.jpg" alt="">
@@ -525,7 +527,9 @@
 
             </select>
           </div>
-        </div>
+        <!-- Le calendrier apparaîtra ici -->
+<div id="calendar-container" style="display:none; margin-top:1rem;"></div>
+         </div>
 
         <div class="form-group">
           <label for="booking-notes">Notes (optional)</label>
@@ -634,6 +638,36 @@
   </div>
 </section>
 <script src="script.js"></script>
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+<script>
+  const serviceSelect = document.getElementById("booking-service");
+  const calendarContainer = document.getElementById("calendar-container");
+
+  serviceSelect.addEventListener("change", () => {
+    const selected = serviceSelect.value;
+
+    if (!selected) {
+      calendarContainer.style.display = "none";
+      calendarContainer.innerHTML = "";
+      return;
+    }
+
+    calendarContainer.style.display = "block";
+
+    calendarContainer.innerHTML = `
+      <div 
+        class="calendly-inline-widget"
+        data-url="https://calendly.com/angeloguillaume593/rendez-vous-judi-glam-house?service=${selected}&background_color=fff7fb&text_color=622950&primary_color=ff6fb3"
+        style="min-width:320px; height:600px;">
+      </div>
+    `;
+
+    Calendly.initInlineWidgets();
+  });
+</script>
+
 </body>
 </html>
+
 

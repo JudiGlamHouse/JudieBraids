@@ -973,6 +973,20 @@ header .btn-outline {
   width: 100%;
 }
 
+.top-photo-strip video {
+  height: 400px;
+  width: auto;
+  border-radius: 16px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+@media (max-width: 600px) {
+  .top-photo-strip video {
+    height: 280px;
+  }
+}
+
+
 /* ⭐ BANDEAU DE PHOTOS — VERSION AGRANDIE ⭐ */
 .top-photo-strip img {
   height: 400px;        /* AUGMENTE LA TAILLE */
@@ -985,7 +999,7 @@ header .btn-outline {
 /* ⭐ VERSION MOBILE — PLUS PETIT MAIS PLUS GRAND QU’AVANT ⭐ */
 @media (max-width: 600px) {
   .top-photo-strip img {
-    height: 150px;      /* avant 120px → maintenant 150px */
+    height: 280px;      /* avant 120px → maintenant 150px */
   }
 }
 
